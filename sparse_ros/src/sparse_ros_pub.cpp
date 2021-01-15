@@ -35,18 +35,18 @@ int main(int argc, char *argv[])
         system("PAUSE");
         return (-1);
     }
-
 	for (size_t i = 0; i < cloud->points.size(); ++i)
 	{
-
         a = cloud->points[i].y;
-		cloud->points[i].y = cloud->points[i].z;
-		cloud->points[i].z = a;
-		cloud->points[i].z -= 0.6;
-		a = cloud->points[i].y;
-
+		// cloud->points[i].y = cloud->points[i].z;
 		cloud->points[i].y = -cloud->points[i].x;
 		cloud->points[i].x = a;
+
+		// cloud->points[i].z -= 0.6;
+		// a = cloud->points[i].y;
+		cloud->points[i].z = -cloud->points[i].z+1.5;
+		// cloud->points[i].y = -cloud->points[i].x;
+		// cloud->points[i].x = a;
 	}
 
 	sensor_msgs::PointCloud2 output;

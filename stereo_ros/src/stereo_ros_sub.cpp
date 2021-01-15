@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
 
 		// 遍历深度图
 		for (int m = 0; m < depth.rows; m++)
-			for (int n=0; n < depth.cols; n=n+10)
+			for (int n=0; n < depth.cols; n=n+30)
 			{
 				// 获取深度图中(m,n)处的值
 				ushort d = depth.ptr<ushort>(m)[n];
