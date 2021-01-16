@@ -22,7 +22,15 @@ target_link_libraries(topic_tools ${catkin_LIBRARIES})
 add_executable(delay src/delay.cpp)
 target_link_libraries(delay topic_tools ${catkin_LIBRARIES})
 
+add_executable(delay_filter src/delay_filter.cpp)
+target_link_libraries(delay_filter topic_tools ${catkin_LIBRARIES})
+
 install(TARGETS delay
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+install(TARGETS delay_filter
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
